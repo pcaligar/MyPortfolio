@@ -6,18 +6,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" href="css/skins/pink.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
+  <script>
+    function openMenu() {
+      document.getElementById("menu").style.transition = "4s";
+      document.getElementById("menu").style.visibility = "visible";
+      document.getElementById("menu").style.transition = "2s";
+      document.getElementById("menu").style.width = "270px";
+
+      document.getElementById("mainContainer").style.transition = "4s";
+      document.getElementById("mainContainer").style.paddingLeft = "270px";
+
+      document
+        .getElementById("logoHome")
+        .classList.add("animate__animated", "animate__fadeOut");
+
+      document
+        .getElementById("nameHome")
+        .classList.remove("animate__animated", "animate__zoomIn");
+      document
+        .getElementById("nameHome")
+        .classList.add("animate__animated", "animate__fadeOut");
+      document
+        .getElementById("descriptionHome")
+        .classList.remove(
+          "animate__animated",
+          "animate__zoomIn",
+          "animate__delay-1s"
+        );
+      document
+        .getElementById("descriptionHome")
+        .classList.add("animate__animated", "animate__fadeOut");
+      document
+        .getElementById("socialLink")
+        .classList.add("animate__animated", "animate__fadeOut");
+      document
+        .getElementById("nav")
+        .classList.add(
+          "animate__animated",
+          "animate__fadeIn",
+          "animate__delay-1s"
+        );
+      document
+        .getElementById("logoAside")
+        .classList.add(
+          "animate__animated",
+          "animate__fadeIn",
+          "animate__delay-1s"
+        );
+    }
+
+    function closeMenu() {
+      // document
+      //   .getElementById("nav")
+      //   .classList.add(
+      //     "animate__animated",
+      //     "animate__fadeOut",
+      //     "animate__delay"
+      //   );
+      // document
+      //   .getElementById("logoAside")
+      //   .classList.add(
+      //     "animate__animated",
+      //     "animate__fadeOut",
+      //     "animate__delay"
+      //   );
+      // document.getElementById("menu").style.transition = "5s";
+      // document.getElementById("menu").style.visibility = "hidden";
+      // document.getElementById("menu").style.width = "0px";
+      // document.getElementById("mainContainer").style.transition = "5s";
+      // document.getElementById("mainContainer").style.paddingLeft = "0px";
+      // document
+      //   .getElementById("logoHome")
+      //   .classList.remove("animate__animated", "animate__fadeOut");
+      // document
+      //   .getElementById("logoHome")
+      //   .classList.add("animate__animated", "animate__fadeIn");
+      // document
+      //   .getElementById("nameHome")
+      //   .classList.add("animate__animated", "animate__fadeIn");
+      // document
+      //   .getElementById("descriptionHome")
+      //   .classList.add("animate__animated", "animate__fadeIn");
+      // document
+      //   .getElementById("socialLink")
+      //   .classList.add("animate__animated", "animate__fadeIn");
+    }
+  </script>
   <body>
     <!--MAIN SECTION -->
-    <div class="main-container">
+    <div id="mainContainer" class="main-container">
       <div id="menu" class="aside">
         <div class="logo">
-          <a href="#">Cali</a>
+          <!-- <a href="#">Cali</a> -->
+          <img
+            id="logoAside"
+            src="images/profile.jpg"
+            alt="logoAside"
+            class="shadow-dark"
+            onclick="closeMenu()"
+          />
         </div>
-        <div class="nav-toggler">
+
+        <!-- <div class="nav-toggler">
           <span></span>
-        </div>
-        <ul class="nav">
+        </div> -->
+        <ul id="nav" class="nav">
           <li>
             <a href="#" class="active"><i class="fa fa-home"></i>Home</a>
           </li>
@@ -39,10 +137,26 @@
         <section class="home section">
           <div class="container">
             <div class="intro">
-              <img src="images/profile.jpg" alt="profile" class="shadow-dark" />
-              <h1>Paulo Caligaris</h1>
-              <p>I'm Developer</p>
-              <div class="social-link">
+              <img
+                id="logoHome"
+                src="images/profile.jpg"
+                alt="profile"
+                class="shadow-dark animate__animated animate__fadeInUp animate__delay-0.3s animate__duration-15s"
+                onclick="openMenu()"
+              />
+              <h1
+                id="nameHome"
+                class="animate__animated animate__zoomIn animate__delay-0.7s"
+              >
+                Paulo Caligaris
+              </h1>
+              <p
+                id="descriptionHome"
+                class="animate__animated animate__zoomIn animate__delay-1s"
+              >
+                I'm Developer
+              </p>
+              <div id="socialLink" class="social-link">
                 <a href="#"><i class="fa fa-linkedin"></i></a>
               </div>
             </div>
@@ -51,5 +165,38 @@
       </div>
     </div>
     <!--MAIN SECTION -->
+
+    <!--ABOUT SECTION -->
+    <!-- <section class="about section">
+      <div class="container">
+        <div class="row">
+          <div class="section-title padd-15">
+            <h2>About Me</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="about-content padd-15">
+            <div class="row">
+              <div class="about-text">
+                <h3>
+                  I'm Paulo Caligaris,
+                  <span>
+                    Fullstack Developer, Freelancer, Blockchain Enthusiast
+                  </span>
+                </h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Eligendi commodi dolorum ex veniam. Facilis, dignissimos.
+                  Voluptate rem nobis magnam suscipit perspiciatis ipsum velit,
+                  reiciendis voluptatum a asperiores, soluta, architecto
+                  debitis!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!--ABOUT SECTION -->
   </body>
 </html>
